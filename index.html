@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewel Matendechere | Web Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/8c7f3b9c7b.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .shadow-neon {
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+    
+    .skill-bar {
+      transition: width 2s ease-in-out;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    #navbar {
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 bg-gray-900/90 py-4 shadow-md">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#welcome-section" class="text-2xl font-bold text-gradient">Jewel Matendechere</a>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <div id="menu" class="hidden md:flex space-x-8">
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 py-4">
+      <div class="container mx-auto px-6 flex flex-col space-y-4">
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="welcome-section" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-gray-900 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516321318423-f06f85e504d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute bottom-10 left-10 w-16 h-16 rounded-full bg-blue-500 filter blur-3xl opacity-30"></div>
+      <div class="absolute top-20 right-20 w-32 h-32 rounded-full bg-purple-500 filter blur-3xl opacity-20"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 z-10 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">
+        Hi, I'm <span class="text-gradient">Jewel Matendechere</span>
+      </h1>
+      <h2 class="text-2xl md:text-3xl mb-8 text-gray-300">
+        A passionate <span class="text-gradient font-semibold">Web Developer</span> creating digital experiences
+      </h2>
+      <div class="flex justify-center space-x-4">
+        <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold shadow-neon hover:shadow-neon-lg transition-all hover:translate-y-[-2px]">
+          View My Work
+        </a>
+        <a href="#contact" class="px-8 py-3 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-900/30 transition-all">
+          Contact Me
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-gray-400 hover:text-white transition">
+        <i class="fas fa-chevron-down text-3xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-16 text-center">
+        About <span class="text-gradient">Me</span>
+      </h2>
+      
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/3 flex justify-center">
+          <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-400 shadow-neon hover:shadow-neon-lg transition-all">
+            <img src="profile-pic-1.jpg"
+                 alt="Jewel Matendechere" 
+                 class="w-full h-full object-cover">
+          </div>
+        </div>
+        
+        <div class="lg:w-2/3">
+          <h3 class="text-2xl font-semibold mb-4">Who Am I?</h3>
+          <p class="text-gray-300 mb-6">
+            I'm a passionate web developer with 3 years of experience in building modern, responsive websites and web applications. I specialize in front-end development but also enjoy working with full-stack technologies.
+          </p>
+          <p class="text-gray-300 mb-6">
+            My journey in web development began during the pandemic. I was so fascinated with how much technology can do. I saw how many companies had to suddenly rely on their apps and websites to keep their businesses afloat and I was curious so I decided I must be part of that change! So in 2022 I made an informed desicion to pursue web development.
+          </p>
+          <p class="text-gray-300 mb-8">
+            Outside of coding, I enjoy walks and trying different cuisines while seeing how innovative people are with other technologies, we can never learn enough!
+          </p>
+          
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center bg-gray-800 px-4 py-2 rounded-full">
+              <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
+              <span>Nairobi, Kenya</span>
+            </div>
+            <div class="flex items-center bg-gray-800 px-4 py-2 rounded-full">
+              <i class="fas fa-graduation-cap text-purple-400 mr-2"></i>
+              <span>Front-end developer</span>
+            </div>
+            <div class="flex items-center bg-gray-800 px-4 py-2 rounded-full">
+              <i class="fas fa-briefcase text-blue-400 mr-2"></i>
+              <span>3+ Years Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-4 text-center">
+        My <span class="text-gradient">Projects</span>
+      </h2>
+      <p class="text-xl text-gray-300 text-center mb-16 max-w-3xl mx-auto">
+        Here are some of my recent projects. Each project presented unique challenges and learning opportunities.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-neon">
+          <div class="h-48 overflow-hidden">
+            <img src="snake-board-1.jpg" 
+                 alt="Snakeboard" 
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Snakeboard</h3>
+            <p class="text-gray-300 mb-4">
+              There was a challenge I saw about creating the worst yet most creative UI/UX design and I wanted to join in. This is where to log in you have to type in your name but the gag is, the snake is in the keyboard so you have to time it to type your name because its always moving and be careful to make sure the snake doesn't bite its back because you will have to start again!!
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">React</span>
+              <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-sm">Tailwind</span>
+              <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-sm">MongoDB</span>
+            </div>
+            <div class="flex space-x-4">
+              <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                <i class="fab fa-github mr-1"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+<!-- Project 2 -->
+<div class="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-neon">
+  <div class="h-48 overflow-hidden">
+    <img src="twakula.jpg" 
+         alt="Twakula" 
+         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+  </div>
+  <div class="p-6">
+    <h3 class="text-2xl font-bold mb-2">TWAKULA</h3>
+    <p class="text-gray-300 mb-4">
+      A food sharing platform that offers space for people to share recipes based on various ingredients and meal inspos
+    </p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">Vue.js</span>
+      <span class="px-3 py-1 bg-yellow-900/50 text-yellow-300 rounded-full text-sm">React</span>
+      <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded-full text-sm">TailwindCSS</span>
+    </div>
+    <div class="flex space-x-4">
+      <a href="https://github.com/matendecherej/twakula-frontend" target="_blank" class="text-purple-400 hover:text-purple-300 transition">
+        <i class="fab fa-github mr-1"></i> Source Code
+      </a>
+    </div>
+  </div>
+</div>
+        
+        <!-- Project 3 -->
+        <div class="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-neon">
+          <div class="h-48 overflow-hidden">
+            <img src="pomodoro-clock.jpg" 
+                 alt="pomodoro-clock" 
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Pomodoro Clock</h3>
+            <p class="text-gray-300 mb-4">
+              This is a timer app that uses the pomodoro technique. It is supposed to help those with short attention spans. The timer lasts for 25 minutes with 5 minute intervals.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">JavaScript</span>
+              <span class="px-3 py-1 bg-red-900/50 text-red-300 rounded-full text-sm">API Integration</span>
+              <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-sm">CSS3</span>
+            </div>
+            <div class="flex space-x-4">
+              <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                <i class="fab fa-github mr-1"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-neon">
+          <div class="h-48 overflow-hidden">
+            <img src="calorie-counter.jpg" 
+                 alt="Calorie calorie-counter" 
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Calorie Converter</h3>
+            <p class="text-gray-300 mb-4">
+              An app that help track our intake and also detecting nutritional value in a plate!
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">HTML</span>
+              <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-sm">javascript</span>
+              <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-sm">Express</span>
+            </div>
+            <div class="flex space-x-4">
+              <a href="https://github.com/matendecherej/javascript/tree/main/freecodecamp/calorie-counter" target="_blank"  class="text-purple-400 hover:text-purple-300 transition">
+                <i class="fab fa-github mr-1"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-4 text-center">
+        My <span class="text-gradient">Skills</span>
+      </h2>
+      <p class="text-xl text-gray-300 text-center mb-16 max-w-3xl mx-auto">
+        I'm constantly learning and expanding my skill set. Here are the technologies I'm proficient with.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Technical Skills -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-code text-blue-400 mr-3"></i>
+            <span>Technical Skills</span>
+          </h3>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">HTML5 & CSS3</span>
+                <span class="text-blue-400">95%</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="skill-bar bg-blue-500 h-2.5 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">JavaScript (ES6+)</span>
+                <span class="text-blue-400">90%</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="skill-bar bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">React & Redux</span>
+                <span class="text-blue-400">85%</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="skill-bar bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Node.js & Express</span>
+                <span class="text-blue-400">80%</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="skill-bar bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Other Skills -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-tools text-purple-400 mr-3"></i>
+            <span>Tools & Soft Skills</span>
+          </h3>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center bg-gray-800/50 p-4 rounded-lg">
+              <i class="fab fa-git-alt text-orange-400 text-2xl mr-3"></i>
+              <span>Git & GitHub</span>
+            </div>
+            
+            <div class="flex items-center bg-gray-800/50 p-4 rounded-lg">
+              <i class="fab fa-figma text-purple-400 text-2xl mr-3"></i>
+              <span>UI/UX Design</span>
+            </div>
+            
+            <div class="flex items-center bg-gray-800/50 p-4 rounded-lg">
+              <i class="fas fa-server text-green-400 text-2xl mr-3"></i>
+              <span>REST APIs</span>
+            </div>
+            
+            <div class="flex items-center bg-gray-800/50 p-4 rounded-lg">
+              <i class="fas fa-lightbulb text-yellow-400 text-2xl mr-3"></i>
+              <span>Problem Solving</span>
+            </div>
+            
+            <div class="flex items-center bg-gray-800/50 p-4 rounded-lg">
+              <i class="fas fa-users text-blue-400 text-2xl mr-3"></i>
+              <span>Team Collaboration</span>
+            </div>
+            
+            <div class="flex items-center bg-gray-800/50 p-4 rounded-lg">
+              <i class="fas fa-comments text-purple-400 text-2xl mr-3"></i>
+              <span>Communication</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Learning Now Section -->
+      <div class="mt-16 bg-gray-800/50 rounded-xl p-8">
+        <h3 class="text-2xl font-semibold mb-4 flex items-center">
+          <i class="fas fa-rocket text-purple-400 mr-3"></i>
+          <span>Currently Learning</span>
+        </h3>
+        <p class="text-gray-300 mb-6">
+          I believe in continuous learning. Currently expanding my knowledge in these areas:
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center px-4 py-2 bg-purple-900/30 rounded-full">
+            <i class="fab fa-react text-blue-300 mr-2"></i>
+            <span>Tailwind CSS</span>
+          </div>
+          <div class="flex items-center px-4 py-2 bg-blue-900/30 rounded-full">
+            <i class="fab fa-aws text-orange-300 mr-2"></i>
+            <span>Mongo DB</span>
+          </div>
+          <div class="flex items-center px-4 py-2 bg-green-900/30 rounded-full">
+            <i class="fab fa-node-js text-green-300 mr-2"></i>
+            <span>Typescript</span>
+          </div>
+          <div class="flex items-center px-4 py-2 bg-pink-900/30 rounded-full">
+            <i class="fas fa-brain text-pink-300 mr-2"></i>
+            <span>Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-4 text-center">
+        Get In <span class="text-gradient">Touch</span>
+      </h2>
+      <p class="text-xl text-gray-300 text-center mb-16 max-w-3xl mx-auto">
+        Have a project in mind or want to chat? Feel free to reach out!
+      </p>
+      
+      <div class="flex flex-col lg:flex-row gap-12">
+        <div class="lg:w-1/2">
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+              <input type="text" id="name" name="name" required
+                     class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                     placeholder=>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-gray-300 mb-2">Your Email</label>
+              <input type="email" id="email" name="email" required
+                     class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                     placeholder=>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-gray-300 mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Hello Jewel, I'd like to talk about..."></textarea>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold shadow-neon hover:shadow-neon-lg transition-all">
+              Send Message
+              <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <div class="bg-gray-900 p-8 rounded-xl h-full">
+            <h3 class="text-2xl font-semibold mb-6">Connect With Me</h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-blue-900/30 p-3 rounded-full mr-4">
+                  <i class="fas fa-envelope text-blue-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Email</h4>
+                  <a href="mailto:alex@example.com" class="text-blue-400 hover:underline">jeweldonah1@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-purple-900/30 p-3 rounded-full mr-4">
+                  <i class="fab fa-github text-purple-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">GitHub</h4>
+                  <a href="https://github.com/alexcarter" target="_blank" class="text-blue-400 hover:underline">https://github.com/settings/profile</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-blue-800/30 p-3 rounded-full mr-4">
+                  <i class="fab fa-linkedin-in text-blue-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">LinkedIn</h4>
+                  <a href="https://linkedin.com/in/alexcarter" target="_blank" class="text-blue-400 hover:underline">https://ke.linkedin.com/in/jewel-matendechere-2837372b4</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-red-900/30 p-3 rounded-full mr-4">
+                  <i class="fab fa-twitter text-blue-400"></i>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700">
+              <h3 class="text-2xl font-semibold mb-4">Let's Work Together</h3>
+              <p class="text-gray-300">
+                I'm currently available for freelance projects or full-time opportunities. If you have a website, web application, or project that needs development, I'd love to hear about it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col items-center justify-center">
+        <a href="#welcome-section" class="text-2xl font-bold text-gradient mb-6">Jewel Matendechere</a>
+        
+        <div class="flex space-x-6 mb-8">
+          <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-blue-500 transition">
+            <i class="fab fa-linkedin-in text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-red-400 transition">
+            <i class="fab fa-dribbble text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-green-400 transition">
+            <i class="fab fa-dev text-2xl"></i>
+          </a>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+          <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+          <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
+          <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+          <a href="#" class="text-gray-400 hover:text-white transition">Blog</a>
+          <a href="#" class="text-gray-400 hover:text-white transition">Resume</a>
+        </div>
+        
+        <p class="text-gray-500 text-center mb-6">
+          © 2025 Jewel Matendechere. All rights reserved.
+        </p>
+        
+        <a href="#welcome-section" class="flex items-center text-blue-400 hover:text-blue-300 transition">
+          <i class="fas fa-arrow-up mr-2"></i>
+          Back to Top
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+    
+    // Form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      this.reset();
+    });
+    
+    // Animate skill bars on scroll into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const skillBar = entry.target.querySelector('.skill-bar');
+          if (skillBar) {
+            // This triggers the CSS transition
+            skillBar.style.width = skillBar.style.width;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    dnt.querySelectorAll('#skills .w-full').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Smooth scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
