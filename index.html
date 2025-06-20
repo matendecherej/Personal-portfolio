@@ -532,86 +532,88 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Initialize EmailJS with your public key
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize EmailJS with your public key
+      emailjs.init("2CJuJRgPacwqN33tq"); // Replace with your EmailJS public key
 
-    // Mobile menu toggle
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-    });
-    
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.add('hidden');
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
       });
-    });
-    
-    // Form submission with EmailJS
-    document.getElementById('submit-button').addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent default form submission
-
-      // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-
-      // Validate form
-      if (!name || !email || !message) {
-        alert('Please fill out all fields.');
-        return;
-      }
-
-      // Prepare EmailJS template parameters
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        message: message
-      };
-
-      // Send email using EmailJS
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-        .then(function(response) {
-          alert('Thank you for your message! I will get back to you soon.');
-          document.getElementById('contact-form').reset(); // Reset form
-        }, function(error) {
-          alert('Failed to send message. Please try again later.');
-          console.error('EmailJS error:', error);
+      
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobile-menu').classList.add('hidden');
         });
-    });
-    
-    // Animate skill bars on scroll into view
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const skillBar = entry.target.querySelector('.skill-bar');
-          if (skillBar) {
-            // This triggers the CSS transition
-            skillBar.style.width = skillBar.style.width;
-          }
-        }
       });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('#skills .w-full').forEach(el => {
-      observer.observe(el);
-    });
-    
-    // Smooth scrolling for all links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
+      
+      // Form submission with EmailJS
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Validate form
+        if (!name || !email || !message) {
+          alert('Please fill out all fields.');
+          return;
         }
+
+        // Prepare EmailJS template parameters
+        const templateParams = {
+          from_name: name,
+          from_email: email,
+          message: message,
+          to_email: "jeweldonah1@gmail.com" // Set your email as the recipient
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_6wcjaqs', 'template_wlgkx8f', templateParams)
+          .then(function(response) {
+            alert('Thank you for your message! I will get back to you soon.');
+            document.getElementById('contact-form').reset(); // Reset form
+          }, function(error) {
+            alert('Failed to send message. Please try again later.');
+            console.error('EmailJS error:', error);
+          });
+      });
+      
+      // Animate skill bars on scroll into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const skillBar = entry.target.querySelector('.skill-bar');
+            if (skillBar) {
+              skillBar.style.width = skillBar.style.width;
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('#skills .w-full').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Smooth scrolling for all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
       });
     });
   </script>
